@@ -119,9 +119,9 @@ def sent_recommendation(input_sent):
     urdu=[]
     index = indices[indices == usr_input].index.values[0]
     similarity_scores = pd.Series(cosine_sim[index]).sort_values(ascending = False)
-    top_10_movies = list(similarity_scores.iloc[1:11].index)
+    top_10_hadees = list(similarity_scores.iloc[1:11].index)
     # print(similarity_scores.iloc[1:11])
-    for i in top_10_movies:
+    for i in top_10_hadees:
       recommended_movies.append(list(df.Hadith)[i])
       urdu.append(list(dfs.urdu)[i])
       topics.append(list(df.Topic)[i])
